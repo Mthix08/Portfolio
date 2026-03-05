@@ -1,34 +1,79 @@
+@import url("https://fonts.googleapis.com");
 
 * {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
 
 body {
-    background-color: #0f172a; 
-    color: #e5e7eb;   
+  background-color: #0f172a;
+  color: #e5e7eb;
 }
 nav {
-    width: 100%;
-    background-color: #0f172a; 
-    padding: 20px 0;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: 1000; 
+  width: 100%;
+  background-color: #0f172a;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 20px;
 }
 nav ul {
-    list-style: none; 
-    display: flex; 
-    justify-content: right; 
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: right;
+  margin: 0;
+  padding: 0;
 }
 nav li {
-    margin: 0 15px; 
+  margin: 0 15px;
 }
 nav a {
-    text-decoration:dashed; 
-    color:#e5e7eb; 
-    font-weight: bold;
+  text-decoration: none;
+  color: #e5e7eb;
+  font-weight: bold;
+}
+nav li#name {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  margin-right: auto;
+  margin-left: 20px;
+  padding: 0;
+}
+#menu {
+  display: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* nav li#ham {
+  display: flex;
+  width: 40px;
+  height: 40px;
+} */
+@media (max-width: 500px) {
+  #menu {
+    display: block;
+  }
+  nav li:not(#name):not(#ham) {
+    display: none;
+  }
+  nav ul.active nav li:not(#name):not(#ham) {
+    display: block;
+  }
+  nav ul.active {
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #014cfc;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+  }
+  nav li {
+    margin: 10px 0;
+  }
 }
